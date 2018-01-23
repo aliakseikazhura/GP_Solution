@@ -2,43 +2,43 @@ import java.io.*;
 
 public class Task_579 {
     public static void main(String[] args) throws IOException {
-        int sumPol = 0, sumOtr = 0, countPol = 0, countOtr = 0, countZero = 0;
+        int sumPositive = 0, sumNegative = 0, countPositive = 0, countNegative = 0, countZeros = 0;
         try (
                 BufferedReader br = new BufferedReader(new FileReader("INPUT.txt"));
                 BufferedWriter bw = new BufferedWriter(new FileWriter("OUTPUT.txt"))
         ) {
             int g = Integer.parseInt(br.readLine());
-            int[] mas = new int[g];
+            int[] array = new int[g];
             String[] inputArray = br.readLine().split("\\s+");
             for (int i = 0; i < g; i++) {
-                mas[i] = Integer.parseInt(inputArray[i]);
+                array[i] = Integer.parseInt(inputArray[i]);
             }
             for (int i = 0; i < g; i++) {
-                if (mas[i] > 0) {
-                    sumPol += mas[i];
-                    countPol++;
+                if (array[i] > 0) {
+                    sumPositive += array[i];
+                    countPositive++;
                 }
-                if (mas[i] < 0) {
-                    sumOtr += mas[i];
-                    countOtr++;
+                if (array[i] < 0) {
+                    sumNegative += array[i];
+                    countNegative++;
                 }
-                if (mas[i] == 0)
-                    countZero++;
+                if (array[i] == 0)
+                    countZeros++;
             }
-            if (countZero == g) {
+            if (countZeros == g) {
                 bw.write(0 + "\r\n");
             }
-            if (Math.abs(sumPol) > Math.abs(sumOtr)) {
-                bw.write(countPol + "\r\n");
+            if (Math.abs(sumPositive) > Math.abs(sumNegative)) {
+                bw.write(countPositive + "\r\n");
                 for (int i = 0; i < g; i++) {
-                    if (mas[i] > 0)
+                    if (array[i] > 0)
                         bw.write(i + 1 + " ");
                 }
             }
-            if (Math.abs(sumPol) < Math.abs(sumOtr)) {
-                bw.write(countOtr + "\r\n");
+            if (Math.abs(sumPositive) < Math.abs(sumNegative)) {
+                bw.write(countNegative + "\r\n");
                 for (int i = 0; i < g; i++) {
-                    if (mas[i] < 0)
+                    if (array[i] < 0)
                         bw.write(i + 1 + " ");
                 }
             }
