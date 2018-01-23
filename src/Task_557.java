@@ -29,8 +29,9 @@ public class Task_557 {
                     br.readLine();
                     for (int i = 0; i < size; i++) {
                         line = br.readLine().split("\\s+");
-                        for (int j = 0; j < size; j++)
+                        for (int j = 0; j < size; j++) {
                             matrixA[i][j] = Integer.parseInt(line[j]);
+                        }
                     }
                     result = multiplyMatrices(result, matrixA, primeNumber);
                 }
@@ -38,8 +39,9 @@ public class Task_557 {
             } else {
                 for (int i = 0; i < size; i++) {
                     line = br.readLine().split("\\s+");
-                    for (int j = 0; j < size; j++)
+                    for (int j = 0; j < size; j++) {
                         matrixA[i][j] = Integer.parseInt(line[j]);
+                    }
                 }
                 bw.write(String.valueOf(matrixA[coordinateI - 1][coordinateJ - 1]));
             }
