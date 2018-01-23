@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 public class Task_670 {
     public static boolean checkNumber(int x) {
         List<Integer> list = new ArrayList<>();
@@ -16,6 +17,7 @@ public class Task_670 {
         }
         return true;
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int g = scanner.nextInt();
