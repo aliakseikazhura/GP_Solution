@@ -26,23 +26,24 @@ public class Task_579 {
                     }
                 }
             }
-            if (countZeros == g) {
-                bw.write(0 + "\r\n");
-            }
-            if (Math.abs(sumPositive) > Math.abs(sumNegative)) {
+            if (Math.abs(sumPositive) >= Math.abs(sumNegative)) {
                 bw.write(countPositive + "\r\n");
                 for (int i = 0; i < g; i++) {
                     if (array[i] > 0)
                         bw.write(i + 1 + " ");
                 }
-            }
-            if (Math.abs(sumPositive) < Math.abs(sumNegative)) {
-                bw.write(countNegative + "\r\n");
-                for (int i = 0; i < g; i++) {
-                    if (array[i] < 0)
-                        bw.write(i + 1 + " ");
+            } else {
+                if (Math.abs(sumPositive) < Math.abs(sumNegative)) {
+                    bw.write(countNegative + "\r\n");
+                    for (int i = 0; i < g; i++) {
+                        if (array[i] < 0)
+                            bw.write(i + 1 + " ");
+                    }
+                } else {
+                    bw.write(0 + "\r\n");
                 }
             }
+
         }
     }
 }
