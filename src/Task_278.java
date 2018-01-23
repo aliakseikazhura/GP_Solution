@@ -13,12 +13,11 @@ public class Task_278 {
                 bw.write("NO");
             else {
                 for (int j = 0; j < t.length(); j++) {
-                    if (i >= s.length()) {
+                    if (i >= s.length())
                         break;
-                    }
-                    if (s.charAt(i) == t.charAt(j)) {
+
+                    if (s.charAt(i) == t.charAt(j))
                         i++;
-                    }
                 }
                 if (s.length() == i && i != 0)
                     bw.write("YES");
