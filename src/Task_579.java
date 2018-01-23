@@ -2,7 +2,7 @@ import java.io.*;
 
 public class Task_579 {
     public static void main(String[] args) throws IOException {
-        int sumPositive = 0, sumNegative = 0, countPositive = 0, countNegative = 0, countZeros = 0;
+        int sumPositive = 0, sumNegative = 0, countPositive = 0, countNegative = 0;
         try (
                 BufferedReader br = new BufferedReader(new FileReader("INPUT.txt"));
                 BufferedWriter bw = new BufferedWriter(new FileWriter("OUTPUT.txt"))
@@ -21,8 +21,6 @@ public class Task_579 {
                     if (array[i] < 0) {
                         sumNegative += array[i];
                         countNegative++;
-                    } else {
-                        countZeros++;
                     }
                 }
             }
