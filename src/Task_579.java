@@ -30,7 +30,6 @@ public class Task_579 {
             }
             if (Math.abs(sumPol) > Math.abs(sumOtr)) {
                 bw.write(countPol + "\r\n");
-                System.out.println(countPol);
                 for (int i = 0; i < g; i++) {
                     if (mas[i] > 0)
                         bw.write(i + 1 + " ");
@@ -44,6 +43,5 @@ public class Task_579 {
                 }
             }
         }
-
     }
 }
