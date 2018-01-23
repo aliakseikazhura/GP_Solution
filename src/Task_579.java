@@ -17,13 +17,14 @@ public class Task_579 {
                 if (array[i] > 0) {
                     sumPositive += array[i];
                     countPositive++;
+                } else {
+                    if (array[i] < 0) {
+                        sumNegative += array[i];
+                        countNegative++;
+                    } else {
+                        countZeros++;
+                    }
                 }
-                if (array[i] < 0) {
-                    sumNegative += array[i];
-                    countNegative++;
-                }
-                if (array[i] == 0)
-                    countZeros++;
             }
             if (countZeros == g) {
                 bw.write(0 + "\r\n");
