@@ -18,23 +18,24 @@ public class Task_557 {
             br.readLine();
             matrixA = new int[size][size];
             result = new int[size][size];
+            for (int i = 0; i < size; i++) {
+                line = br.readLine().split("\\s+");
+                for (int j = 0; j < size; j++) {
+                    result[i][j] = Integer.parseInt(line[j]);
+                }
+            }
+            for (int c = 1; c < countMatrix; c++) {
+                br.readLine();
                 for (int i = 0; i < size; i++) {
                     line = br.readLine().split("\\s+");
                     for (int j = 0; j < size; j++) {
-                        result[i][j] = Integer.parseInt(line[j]);
+                        matrixA[i][j] = Integer.parseInt(line[j]);
                     }
                 }
-                for (int c = 1; c < countMatrix; c++) {
-                    br.readLine();
-                    for (int i = 0; i < size; i++) {
-                        line = br.readLine().split("\\s+");
-                        for (int j = 0; j < size; j++) {
-                            matrixA[i][j] = Integer.parseInt(line[j]);
-                        }
-                    }
-                    result = multiplyMatrices(result, matrixA, primeNumber);
-                }
-                bw.write(String.valueOf(result[coordinateI - 1][coordinateJ - 1]));
+                result = multiplyMatrices(result, matrixA, primeNumber);
+            }
+            bw.write(String.valueOf(result[coordinateI - 1][coordinateJ - 1]));
+
         }
     }
 
